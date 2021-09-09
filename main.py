@@ -15,8 +15,9 @@ def cabecalho():
   print()
 
 def menu():
-  cabecalho()
+  
   while(True):
+    cabecalho()
     print("[1]-Nova Partida\n[2]-Ver Pontuação\n[3]-Sair")
     opcao = int(input("\nO que você deseja fazer? "))
     if opcao == 1:
@@ -29,7 +30,6 @@ def menu():
     else:
       print("\nEntrada Inválida, tente novamente.")
       time.sleep(3)
-    return(menu)
 
 def painel(palavra_resposta):
   print("\nQual é a palavra?")
@@ -40,12 +40,15 @@ def painel(palavra_resposta):
   print("\n")
   print(palavra_resposta)
   print("\n")
+  print("A palavra secreta é: ",palavra_secreta)
+  print("\n")
 
 def msgDerrota():
   global jogador
   print("\n\tA palavra era: ",palavra_secreta)
   print("\n\nQue pena, você perdeu! Mas, não desanime, você pode tentar novamente.")
   jogador = input("\nDigite o seu nome: ")
+  return menu()
 
 def palavraSecreta():
 
@@ -76,8 +79,9 @@ def verificaLetra(palavra, letra):
 def verificaVitoria(p_resposta):
   while(True):
     for i in range(0, len(p_resposta)):
-      if p_resposta[i] == "_":
+      while p_resposta[i] == "_":
         return False
+
     print("\nParabéns, você jagou a jogada!")
     time.sleep(3)
     return True
@@ -119,7 +123,6 @@ def chutarPalavra(p_certas, palavra_secreta): #Por não ter conseguido implement
       jogar()
     else:
       pontos - 5
-    return menu()
 
 def sair():
   os.system('clear')
@@ -156,6 +159,7 @@ def start():
     print("Jogada ",jogada)
     print("Chances restantes: ",vida)
     print("Pontos: ",pontos)
+    print("Total de pontos: ",tPontos)
 
     painel(palavra_resposta)
     
@@ -183,7 +187,7 @@ def jogar():
     letras_digitadas.append(letra)
     acertos = verificaLetra(palavra_secreta, letra)
 
-    pontos += (5 * len(acertos))
+    pontos += 5 * len(acertos)
   
     if len(acertos) == 0:  
       print("\n****** Letra não encontrada! ****** ")
@@ -191,10 +195,10 @@ def jogar():
       vida -= 1
     else:
       palavra_resposta = insereLetra(palavra_secreta, palavra_resposta, acertos)
-      tPontos += pontos  
 
   else:
     print("\n****** ENTRADA INVÁLIDA! ****** ")
     time.sleep(3)
+  tPontos += pontos
 
 menu()
