@@ -111,9 +111,10 @@ def chutarPalavra(p_certas, palavra_secreta): #Por não ter conseguido implement
 
   if (p_certas) >= len(palavra_secreta) // 2:
     print("\nJá sabe a palavra? Deseja chutar valendo 15 pontos?")
-    chute = input("[S]-Sim [N]-Não: ")
-    if chute == 's':
-      palavra_secreta = palavra_resposta
+    op = input("[S]-Sim [N]-Não: ")
+    if op == 's':
+      chute = input("Digite a palavra secreta: ")
+      palavra_secreta = chute
       pontos + 15
       jogar()
     else:
