@@ -52,7 +52,14 @@ def msgDerrota():
 
 def palavraSecreta():
 
-  lista_palavras = ["computador","instrumento", "desencadeamento","estatuto","triunfo","hospede", "escolaridade","simplicidade","metamorfose","ortopedista","circulo","matrimonio","colateral","implante","verme","escala","farmaceutico","institucionalidade","implementar","pediatria","concordancia","programar","inovar","carne","polir","pedir","insistir","investir","imprimir","cumprimento","intervir","curtir","traumatico","impostor","incidente","invejoso","hospede","primeiro","milionario","helicoptero","helice","sismico","homenagem","entretenimento","felicidade","tipo","hino","vaga","tema","cova","linha","pena","dado","dente","tio","tulipa","rosa","casa","andorinha"]
+  lista_palavras = ["computador","instrumento", "desencadeamento","estatuto","triunfo","hospede", 
+                    "escolaridade","simplicidade","metamorfose","ortopedista","circulo","matrimonio",
+                    "colateral","implante","verme","escala","farmaceutico","institucionalidade",
+                    "implementar","pediatria","concordancia","programar","inovar","carne","polir",
+                    "pedir","insistir","investir","imprimir","cumprimento","intervir","curtir",
+                    "traumatico","impostor","incidente","invejoso","hospede","primeiro","milionario",
+                    "helicoptero","helice","sismico","homenagem","entretenimento","felicidade","tipo",
+                    "hino","vaga","tema","cova","linha","pena","dado","dente","tio","tulipa","rosa","casa","andorinha"]
     
   index = random.randint(0, len(lista_palavras) - 1)
     
